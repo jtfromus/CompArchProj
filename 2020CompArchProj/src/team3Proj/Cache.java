@@ -3,7 +3,7 @@ package team3Proj;
 /**
  * Version 1
  * This class is a representation of a Cache, as for right now this class provides the functions
- * to give the user the size of different element in the cache
+ * to give the user the size of different elements in the cache
  * 7/7/2020
  * 
  * @author Jonathan Tan
@@ -18,7 +18,7 @@ public class Cache {
 	private final double CACHECOST = 0.07;
 	
 	/**
-	* @param  cacheSize	the size of the cache in KB
+	* @param  cacheSize the size of the cache in KB
 	* @param  blockSize the size of the block in bytes
 	* @param  associativity number of blocks per row in the cache
 	*/
