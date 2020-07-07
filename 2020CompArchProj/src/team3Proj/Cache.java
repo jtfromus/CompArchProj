@@ -1,7 +1,16 @@
 package team3Proj;
 
+/**
+ * Version 1
+ * This class is a representation of a Cache, as for right now this class provides the functions
+ * to give the user the size of different element in the cache
+ * 7/7/2020
+ * 
+ * @author Jonathan Tan
+ *
+ */
 public class Cache {
-	//cashSize and blockSize are in bytes
+	//cacheSize and blockSize are in bytes
 	private int cacheSize;
 	private int blockSize;
 	private int associativity;
@@ -9,13 +18,13 @@ public class Cache {
 	private final double CACHECOST = 0.07;
 	
 	/**
-	* @param  cacheSize		the size of the cache in KB
-	* @param  blockSize 	the size of the block in bytes
-	* @param  associativity	number of block per row in the cache
+	* @param  cacheSize	the size of the cache in KB
+	* @param  blockSize the size of the block in bytes
+	* @param  associativity number of blocks per row in the cache
 	*/
-	public Cache(int cashSize, int blockSize, int associativity) {
+	public Cache(int cacheSize, int blockSize, int associativity) {
 		this.blockSize = blockSize;
-		this.cacheSize = (int) (cashSize * Math.pow(2, 10));
+		this.cacheSize = (int) (cacheSize * Math.pow(2, 10));
 		this.associativity = associativity;
 	};
 	
