@@ -84,13 +84,49 @@ public class Cache {
 	 */
 	public double getCost() {return CACHECOST * getImplementationSize()/Math.pow(2, 10);}
 	
-	//Getters
+	//Getters---------------------------------------------------------------------------------------------
+	/**
+	 * 
+	 * @return the cache size in bytes
+	 */
 	public int getCashSize() {return cacheSize;}
+	
+	/**
+	 * 
+	 * @return the block size in bytes
+	 */
 	public int getBlockSize() {return blockSize;}
+	
+	/**
+	 * 
+	 * @return associativity
+	 */
 	public int getAssociativity() {return associativity;}
 	
-	//Setters
-	public void setCacheSize(int cashSize) {this.cacheSize = cashSize;}
+	
+	//Setters---------------------------------------------------------------------------------------------
+	/**
+	 * 
+	 * @param cashSize the size of cache in KB
+	 */
+	public void setCacheSize(int cashSize) {this.cacheSize = (int) (cacheSize * Math.pow(2, 10));}
+	
+	/**
+	 * 
+	 * @param blockSize the size of block in bytes
+	 */
 	public void setBlockSize(int blockSize) {this.blockSize = blockSize;}
+	
+	/**
+	 * 
+	 * @param associativity
+	 */
 	public void setAssociativity(int associativity) {this.associativity = associativity;}
+	
+	/**
+	 * @return the string representation of the cache
+	 */
+	public String toString() {
+		return "Cache size: " + cacheSize/Math.pow(2, 10) + "KB\nBlock size: " + blockSize + "byte(s)\nAssociativity: " + associativity;
+	}
 }
