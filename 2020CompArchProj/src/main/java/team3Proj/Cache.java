@@ -1,7 +1,16 @@
 package team3Proj;
 
+/**
+ * Version 1
+ * This class is a representation of a Cache, as for right now this class provides the functions
+ * to give the user the size of different elements in the cache
+ * 7/7/2020
+ * 
+ * @author Jonathan Tan
+ *
+ */
 public class Cache {
-	//cashSize and blockSize are in bytes
+	//cacheSize and blockSize are in bytes
 	private int cacheSize;
 	private int blockSize;
 	private int associativity;
@@ -9,13 +18,13 @@ public class Cache {
 	private final double CACHECOST = 0.07;
 	
 	/**
-	* @param  cacheSize		the size of the cache in KB
-	* @param  blockSize 	the size of the block in bytes
-	* @param  associativity	number of block per row in the cache
+	* @param  cacheSize the size of the cache in KB
+	* @param  blockSize the size of the block in bytes
+	* @param  associativity number of blocks per row in the cache
 	*/
-	public Cache(int cashSize, int blockSize, int associativity) {
+	public Cache(int cacheSize, int blockSize, int associativity) {
 		this.blockSize = blockSize;
-		this.cacheSize = (int) (cashSize * Math.pow(2, 10));
+		this.cacheSize = (int) (cacheSize * Math.pow(2, 10));
 		this.associativity = associativity;
 	};
 	
@@ -75,13 +84,49 @@ public class Cache {
 	 */
 	public double getCost() {return CACHECOST * getImplementationSize()/Math.pow(2, 10);}
 	
-	//Getters
+	//Getters---------------------------------------------------------------------------------------------
+	/**
+	 * 
+	 * @return the cache size in bytes
+	 */
 	public int getCashSize() {return cacheSize;}
+	
+	/**
+	 * 
+	 * @return the block size in bytes
+	 */
 	public int getBlockSize() {return blockSize;}
+	
+	/**
+	 * 
+	 * @return associativity
+	 */
 	public int getAssociativity() {return associativity;}
 	
-	//Setters
-	public void setCacheSize(int cashSize) {this.cacheSize = cashSize;}
+	
+	//Setters---------------------------------------------------------------------------------------------
+	/**
+	 * 
+	 * @param cashSize the size of cache in KB
+	 */
+	public void setCacheSize(int cashSize) {this.cacheSize = (int) (cacheSize * Math.pow(2, 10));}
+	
+	/**
+	 * 
+	 * @param blockSize the size of block in bytes
+	 */
 	public void setBlockSize(int blockSize) {this.blockSize = blockSize;}
+	
+	/**
+	 * 
+	 * @param associativity
+	 */
 	public void setAssociativity(int associativity) {this.associativity = associativity;}
+	
+	/**
+	 * @return the string representation of the cache
+	 */
+	public String toString() {
+		return "Cache size: " + cacheSize/Math.pow(2, 10) + "KB\nBlock size: " + blockSize + "byte(s)\nAssociativity: " + associativity;
+	}
 }
